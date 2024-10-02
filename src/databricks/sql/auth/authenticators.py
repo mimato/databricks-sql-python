@@ -140,7 +140,7 @@ class DatabricksOAuthProvider(AuthProvider):
 
 class ExternalAuthProvider(AuthProvider):
     def __init__(self, credentials_provider: CredentialsProvider) -> None:
-        self._header_factory = credentials_provider()
+        self._header_factory = credentials_provider
 
     def add_headers(self, request_headers: Dict[str, str]):
         headers = self._header_factory()
